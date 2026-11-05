@@ -1,0 +1,438 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Speed Wheels | Bike Showroom</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f5f7;
+    color: #222;
+}
+
+/* HEADER */
+
+header {
+    background: #15191f;
+    color: white;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 28px;
+    color: #ff3535;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 15px;
+}
+
+nav a:hover {
+    color: #ff3535;
+}
+
+/* HERO SECTION */
+
+.hero {
+    padding: 65px 8%;
+    color: white;
+    background:
+    linear-gradient(90deg, rgba(10,10,10,.95), rgba(20,20,20,.65)),
+    repeating-linear-gradient(135deg, #222 0px, #222 20px, #292929 21px, #292929 23px);
+}
+
+.hero h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    font-size: 17px;
+    color: #ddd;
+    margin-bottom: 25px;
+}
+
+.hero button {
+    padding: 13px 28px;
+    background: #e32636;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.hero button:hover {
+    background: #b51222;
+}
+
+/* GENERAL SECTIONS */
+
+section {
+    padding: 40px 8%;
+}
+
+.section-title {
+    font-size: 27px;
+    margin-bottom: 25px;
+    border-left: 5px solid #e32636;
+    padding-left: 12px;
+}
+
+/* 1. ROUNDED CORNERS */
+
+.rounded {
+    background: linear-gradient(120deg, #ffffff, #ffe5e5);
+    border: 2px solid #e32636;
+    border-radius: 15px 45px 15px 45px;
+    padding: 30px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.08);
+}
+
+.rounded h3 {
+    font-size: 23px;
+    margin-bottom: 10px;
+    color: #d51f30;
+}
+
+.rounded p {
+    color: #555;
+    line-height: 1.6;
+}
+
+/* 2. BORDER IMAGE */
+
+.border {
+    padding: 25px;
+    border: 12px solid transparent;
+    border-image: linear-gradient(45deg, #e32636, #15191f, #ff9c42) 30 round;
+    background: white;
+    text-align: center;
+}
+
+.border h3 {
+    margin-bottom: 10px;
+    color: #e32636;
+}
+
+/* 3. MULTIPLE BACKGROUNDS */
+
+.multi {
+    min-height: 170px;
+    padding: 30px;
+    color: white;
+    border-radius: 10px;
+
+    background-image:
+    radial-gradient(circle at 90% 50%, #e32636 35px, transparent 36px),
+    repeating-linear-gradient(45deg, #171b22 0px, #171b22 20px, #252b35 21px, #252b35 24px);
+
+    background-position: right center, left top;
+    background-repeat: no-repeat, repeat;
+}
+
+.multi h3 {
+    font-size: 25px;
+    margin-bottom: 12px;
+}
+
+/* 4. BACKGROUND SIZE */
+
+.size {
+    height: 170px;
+    padding: 25px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+
+    background-image:
+    linear-gradient(45deg, #e32636 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #ffb0b0 75%);
+
+    background-size: 70px 70px;
+    background-position: 0 0, 35px 35px;
+}
+
+/* 5. FORM PSEUDO CLASSES */
+
+.enquiry-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,.07);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 13px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 15px;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border: 2px solid #e32636;
+    background: #fff5f5;
+}
+
+input:required {
+    border-left: 5px solid #e32636;
+}
+
+input:valid {
+    background-color: #f0fff3;
+}
+input:invalid {
+    border-right: 4px solid #e32636;
+}
+.enquiry-form button {
+    background: #e32636;
+    color: white;
+    border: none;
+    padding: 13px 30px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.enquiry-form button:hover {
+    background: #15191f;
+}
+/* 6. ADJACENT SIBLING SELECTOR */
+.bike-hover {
+    display: flex;
+    gap: 15px;
+    align-items: stretch;
+}
+.itemName, .itemImg {
+    width: 50%;
+    padding: 30px;
+    border-radius: 8px;
+    text-align: center;
+}
+.itemName {
+    background: #15191f;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+}
+.itemImg {
+    background: #ffe5e5;
+    color: #e32636;
+    opacity: .35;
+    transition: .4s;
+    font-size: 20px;
+}
+.itemName:hover + .itemImg {
+    opacity: 1;
+    transform: scale(1.03);
+}
+/* 7. NTH CHILD TABLE */
+.table-container {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    overflow-x: auto;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 16px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+th {
+    background: #15191f;
+    color: white;
+}
+tr:nth-child(odd) {
+    background: #ffe9e9;
+}
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+tr:hover {
+    background: #ffcaca;
+}
+/* FOOTER */
+footer {
+    background: #15191f;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 30px;
+}
+footer span {
+    color: #ff3535;
+}
+/* RESPONSIVE DESIGN */
+@media (max-width: 650px) {
+    header {
+        flex-direction: column;
+        gap: 18px;
+    }
+    nav a {
+        margin: 8px;
+    }
+    .hero h2 {
+        font-size: 30px;
+    }
+    .bike-hover {
+        flex-direction: column;
+    }
+    .itemName, .itemImg {
+        width: 100%;
+    }
+}
+</style>
+</head>
+<body>
+<!-- HEADER -->
+<header>
+    <h1>SPEED WHEELS</h1>
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#bikes">Bikes</a>
+        <a href="#enquiry">Enquiry</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+<!-- HERO -->
+<div class="hero" id="home">
+    <h2>Find Your Perfect Ride</h2>
+    <p>Experience performance, power and style with our premium motorcycle collection.</p>
+    <button onclick="document.getElementById('bikes').scrollIntoView({behavior:'smooth'})">
+        Explore Bikes
+    </button>
+</div>
+<section id="bikes">
+    <!-- 1. ROUNDED CORNERS -->
+    <h2 class="section-title">1. Rounded Corners</h2>
+    <div class="rounded">
+        <h3>Royal Enfield Classic 350</h3>
+        <p>Experience timeless design, powerful performance and comfortable riding with our premium cruiser collection.</p>
+    </div>
+    <!-- 2. BORDER IMAGE -->
+
+    <h2 class="section-title" style="margin-top:35px;">2. Border Image</h2>
+    <div class="border">
+        <h3>Premium Bike Collection</h3>
+        Explore our exclusive range of motorcycles with stylish designs and advanced features.
+    </div>
+    <!-- 3. MULTIPLE BACKGROUNDS -->
+    <h2 class="section-title" style="margin-top:35px;">3. Multiple Backgrounds</h2>
+    <div class="multi">
+        <h3>Ride Beyond Limits</h3>
+        <p>Discover your dream motorcycle at Speed Wheels.</p>
+    </div>
+    <!-- 4. BACKGROUND SIZE -->
+    <h2 class="section-title" style="margin-top:35px;">4. Background Size</h2>
+    <div class="size">
+        <h3>Stylish Background Design</h3>
+        <p>Background Size: 70px 70px</p>
+    </div>
+</section>
+<!-- 5. FORM -->
+<section id="enquiry">
+    <h2 class="section-title">5. Customer Enquiry Form</h2>
+    <div class="enquiry-form">
+        <form onsubmit="alert('Your enquiry has been submitted successfully!'); return false;">
+            <input type="text" placeholder="Enter Your Name" required>
+            <input type="email" placeholder="Enter Your Email" required>
+            <input type="tel" placeholder="Enter Your Phone Number" required>
+            <textarea placeholder="Enter Your Enquiry" rows="4"></textarea>
+            <button type="submit">Submit Enquiry</button>
+        </form>
+    </div>
+</section>
+<!-- 6. ADJACENT SIBLING -->
+<section>
+    <h2 class="section-title">6. Explore Our Sports Bikes</h2>
+    <div class="bike-hover">
+        <div class="itemName">
+            Hover Here to Explore Sports Bikes
+        </div>
+        <div class="itemImg">
+            <h3>SPORTS COLLECTION</h3>
+            <p>KTM Duke | Yamaha R15 | BMW G 310 R</p>
+        </div>
+    </div>
+</section>
+<!-- 7. TABLE -->
+<section>
+
+    <h2 class="section-title">7. Bike Comparison Table</h2>
+
+    <div class="table-container">
+
+        <table>
+
+            <tr>
+                <th>Bike Name</th>
+                <th>Category</th>
+                <th>Engine</th>
+                <th>Price</th>
+            </tr>
+
+            <tr>
+                <td>Royal Enfield Classic 350</td>
+                <td>Cruiser</td>
+                <td>349 cc</td>
+                <td>₹1.95 Lakh</td>
+            </tr>
+
+            <tr>
+                <td>KTM Duke 390</td>
+                <td>Sports</td>
+                <td>399 cc</td>
+                <td>₹3.20 Lakh</td>
+            </tr>
+
+            <tr>
+                <td>Yamaha R15 V4</td>
+                <td>Sports</td>
+                <td>155 cc</td>
+                <td>₹1.85 Lakh</td>
+            </tr>
+
+            <tr>
+                <td>Honda Activa 6G</td>
+                <td>Scooter</td>
+                <td>110 cc</td>
+                <td>₹80,000</td>
+            </tr>
+
+        </table>
+
+    </div>
+
+</section>
+<!-- FOOTER -->
+<footer id="contact">
+    <h3>SPEED <span>WHEELS</span></h3>
+    <p>Your Destination for Premium Motorcycles</p>
+    <p>© 2026 Speed Wheels Bike Showroom. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
